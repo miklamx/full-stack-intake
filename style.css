@@ -1,0 +1,18 @@
+:root {
+    --primary: #2563eb;
+    --bg: #f8fafc;
+    --text: #1e293b;
+}
+
+body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); padding: 20px; }
+.container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+
+h1, h2 { color: var(--primary); }
+.input-group { display: flex; gap: 10px; margin-bottom: 20px; }
+input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { text-align: left; padding: 12px; border-bottom: 1px solid #eee; }
+
+button { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
+.export-btn { margin-top: 20px; width: 100%; font-weight: bold; }
