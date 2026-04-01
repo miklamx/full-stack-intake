@@ -25,11 +25,28 @@ function addToDataMap(processName) {
     const tableBody = document.getElementById('mapping-body');
     const row = tableBody.insertRow();
     
-    // Logic: Convert a process like "Texting Photos" into a "Photo_URL" column suggestion
-    const fieldName = processName.split(' ').join('_').toLowerCase();
+    // Clean the string to look like a database column (e.g., "User_ID")
+    const columnSuggest = processName
+        .replace(/\s+/g, '_')
+        .replace(/[^\w]/g, '')
+        .toUpperCase()
+        .substring(0, 20);
     
     row.innerHTML = `
-        <td><input type="text" value="${fieldName}"></td>
+        <td><code style="color: var(--accent); font-weight: bold;">${columnSuggest}</code></td>
+        <td>
+            <select>
+                <option>VARCHAR (Text)</option>
+                <option>INT (Number)</option>
+                <option>BOOLEAN (Yes/No)</option>
+                <option>TIMESTAMP</option>
+                <option>BLOB (Image/File)</option>
+            </select>
+        </td>
+        <td><input type="text" placeholder="Explain the business value of this column..."></td>
+    `;
+}
+
         <td>
             <select>
                 <option>String</option>
